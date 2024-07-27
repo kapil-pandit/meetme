@@ -6,7 +6,7 @@ const authRoutes = require('./auth');
 // Use authentication routes
 router.use('/auth', authRoutes);
 
-router.get('/',(req, res)=> {
+router.post('/public',(req, res)=> {
     res.send("Hello")
 })
 

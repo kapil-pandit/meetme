@@ -1,7 +1,6 @@
 // controller/auth.js
 const pool = require('../config/config');
-
-// Registration logic
+const bcrypt = require("bcrypt")
 // Registration logic
 const register = async (req, res) => {
   const {
@@ -15,6 +14,8 @@ const register = async (req, res) => {
     location
   } = req.body;
 
+
+  console.log(req.body);
   // Check for missing fields
   if (!username || !email || !password) {
     return res.status(400).json({ error: 'Username, email, and password are required.' });
